@@ -48,8 +48,6 @@ docker HUB: hub.docker.com
 
      也可以组合命令，如： docker rmi -f ($docker images -qa)
 
-  5. 
-
 - 容器命令
 
   1. **新建并启动容器**：docker run [OPTIONS] IMAGES [COMMAND]
@@ -74,10 +72,30 @@ docker HUB: hub.docker.com
 
   7. 强制停止容器：docker kill +容器containerID容器名
 
-  8. 删除容器：docker rm +容器containerID或容器名；
+  8. **删除容器**：docker rm +容器containerID或容器名；
 
      一次性删除多个容器：docker rm -f $(docker ps -a -q)
 
   9. 进入正在运行的容器： **docker attach +容器containerID或容器名**
 
   10. 从docker容器内拷贝文件到主机上：docker cp 容器ID：容器内路径 目的主机路径
+
+  11. **docker commit：提交容器副本使之成为一个新的镜像**
+
+      -a: 作者
+
+      -m：提交信息说明
+
+      例子：**docker commit -a "wangjian" -m "tomcat without docs" + containerID +镜像名字：标签**
+
+
+### docker镜像加载原理
+
+docker的镜像由一层一层的文件系统组成，这种层级的文件系统叫UnionFS
+
+docker镜像的最底层是bootfs，主要包含bootloader和kernel
+
+
+
+
+
