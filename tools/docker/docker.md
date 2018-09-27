@@ -48,8 +48,6 @@ docker HUB: hub.docker.com
 
      也可以组合命令，如： docker rmi -f ($docker images -qa)
 
-  5. 
-
 - 容器命令
 
   1. **新建并启动容器**：docker run [OPTIONS] IMAGES [COMMAND]
